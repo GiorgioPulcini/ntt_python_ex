@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "hello-world"
+name = "hello_world"
 version = "0.1.0"
 description = ""
 authors = ["GIORGIO PULCINI <pulcini.giorgio@alice.it>"]
@@ -8,6 +8,8 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 
+[tool.poetry.scripts]
+hello_world = "hello_world.hello:hello"
 
 [build-system]
 requires = ["poetry-core"]
