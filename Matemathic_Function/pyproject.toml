@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "matemathic-function"
+version = "0.1.0"
+description = ""
+authors = ["Giorgio Pulcini <pulcini.giorgio@alice.it>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
