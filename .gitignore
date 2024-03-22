@@ -1,16 +1,16 @@
-# Esclude tutti i file con estensione .log
+# Exclude all file with extension .log
 *.log
 
-# Esclude la cartella tmp/
+# Exclude all directory tmp/
 tmp/
 
-# Esclude la cartella di output della build
+# Exclude all build's output directory
 /dist
 
-# Esclude i file di configurazione dell'IDE o dell'editor
+# Exclude conf file of IDE or editor
 .idea/
 *.sublime-workspace
 
-# Esclude i file di ambiente virtuale di Python
+# Exclude virtualenv python file
 venv/
 *.pyc

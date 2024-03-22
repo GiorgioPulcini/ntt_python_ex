@@ -1,2 +1,2 @@
-def hello(name: str = "World"):
-    print("Hello", name)
+def hello(name: str = "World") -> str:
+    return "Hello " + name

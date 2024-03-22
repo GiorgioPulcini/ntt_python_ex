@@ -20,7 +20,7 @@ class EquilateralTriangle(Triangle):
 
     def area(self):
         h = sqrt(pow(self.side, 2) - pow(self.side / 2, 2))
-        return self.side * h * 0.5
+        return round(self.side * h * 0.5, 3)
 
 
 class IsoscelesTriangle(Triangle):
@@ -34,7 +34,7 @@ class IsoscelesTriangle(Triangle):
 
     def area(self):
         h = sqrt(pow(self.lateral_side, 2) - pow(self.base_side / 2, 2))
-        return self.base_side * h * 0.5
+        return round(self.base_side * h * 0.5, 3)
 
 
 class ScaleneTriangle:
@@ -48,6 +48,6 @@ class ScaleneTriangle:
         return self.side1 + self.side2 + self.side3
 
     def area(self):
-        P = self.perimeter() / 2
-        return sqrt(P * (P - self.side1) * (P - self.side2) * (P - self.side3))
+        p = self.perimeter() / 2
+        return round(sqrt(p * (p - self.side1) * (p - self.side2) * (p - self.side3)))
     
