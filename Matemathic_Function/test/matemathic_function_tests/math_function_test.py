@@ -5,7 +5,7 @@ from Matemathic_Function.src.matemathic_function.math_function import Equilatera
 
 class TriangleTest(unittest.TestCase):
 
-    def test_perimeter_equilateral_triangle(self):
+    def test_equilateral_triangle(self):
         # Given
         given_side = 6
         given_perimeter = 18.0
@@ -16,7 +16,7 @@ class TriangleTest(unittest.TestCase):
         self.assertEqual(given_perimeter, test_et.perimeter())
         self.assertEqual(given_area, test_et.area())
 
-    def test_perimeter_isosceles_triangle(self):
+    def test_isosceles_triangle(self):
         # Given
         given_base_side = 6
         given_lateral_side = 8.0
@@ -28,7 +28,7 @@ class TriangleTest(unittest.TestCase):
         self.assertEqual(given_perimeter, test_it.perimeter())
         self.assertEqual(given_area, test_it.area())
 
-    def test_perimeter_scalene_triangle(self):
+    def test_scalene_triangle(self):
         # Given
         given_side1 = 6
         given_side2 = 8
