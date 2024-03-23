@@ -1,6 +1,5 @@
 import unittest
-from Matemathic_Function.src.matemathic_function.math_function import EquilateralTriangle, IsoscelesTriangle, \
-    ScaleneTriangle
+from matemathic_function.math_function import EquilateralTriangle, IsoscelesTriangle, ScaleneTriangle
 
 
 class TriangleTest(unittest.TestCase):

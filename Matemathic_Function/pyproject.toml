@@ -1,8 +1,11 @@
 [tool.poetry]
-name = "matemathic-function"
+name = "Matemathic_Function"
 version = "0.1.0"
 description = ""
 authors = ["Giorgio Pulcini <pulcini.giorgio@alice.it>"]
+packages = [
+    { include = "matemathic_function", from = "src" }
+]
 readme = "README.md"
 
 [tool.poetry.dependencies]

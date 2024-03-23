@@ -1,5 +1,5 @@
 import unittest
-from Matemathic_Function.src.matemathic_function.hello import hello
+from matemathic_function.hello import hello
 
 
 class HelloTest(unittest.TestCase):
