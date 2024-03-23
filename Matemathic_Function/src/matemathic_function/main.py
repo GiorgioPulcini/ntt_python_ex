@@ -1,7 +1,6 @@
-from Matemathic_Function.src.matemathic_function.hello import hello
-from Matemathic_Function.src.matemathic_function.is_triangle import is_triangle
-from Matemathic_Function.src.matemathic_function.math_function import EquilateralTriangle, IsoscelesTriangle, \
-    ScaleneTriangle
+from matemathic_function.hello import hello
+from matemathic_function.is_triangle import is_triangle
+from matemathic_function.math_function import EquilateralTriangle, IsoscelesTriangle, ScaleneTriangle
 
 
 def main():

@@ -1,5 +1,5 @@
 import unittest
-from Matemathic_Function.src.matemathic_function.is_triangle import is_triangle
+from matemathic_function.is_triangle import is_triangle
 
 
 class TestIsTriangle(unittest.TestCase):
