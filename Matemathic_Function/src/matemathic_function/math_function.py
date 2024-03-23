@@ -49,5 +49,5 @@ class ScaleneTriangle:
 
     def area(self):
         p = self.perimeter() / 2
-        return round(sqrt(p * (p - self.side1) * (p - self.side2) * (p - self.side3)))
+        return round(sqrt(p * (p - self.side1) * (p - self.side2) * (p - self.side3)), 3)
     
