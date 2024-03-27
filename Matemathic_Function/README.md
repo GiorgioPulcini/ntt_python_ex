@@ -14,4 +14,4 @@ poetry run coverage run -m unittest discover test/matemathic_function_tests/
 poetry run coverage report
 ```
 
-![Test Coverage](test_coverage.png)
+![Test Coverage](test_coverage.PNG)
