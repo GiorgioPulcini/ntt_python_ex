@@ -15,4 +15,9 @@ CSV file.
 ## Flowchart
 ![FLOWCHART](img/Diagram.PNG)
 
+
 ## Repo Architecture
+![REPO ARCHITECTURE](img/Repo_architecture.PNG)
+
+
+## Installation
