@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "bigquery-api"
+name = "python-gcs-api"
 version = "0.1.0"
 description = ""
-authors = ["GIORGIO PULCINI <giorgio.pulcini.nttdata@skytv.it>"]
+authors = ["GIORGIO PULCINI <giorgio.pulcini@alice.it>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
