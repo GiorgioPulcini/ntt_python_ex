@@ -47,12 +47,15 @@ For more detailed instruction visit [poetry doc](https://python-poetry.org/docs/
 ### Google Cloud Service Account
 
 To interact with Google Cloud services such as BigQuery or Cloud Storage through Python API, you should have
-a service account with the right roles for a given gcp project. For more information visit 
-[service-account](https://cloud.google.com/docs/authentication#service-accounts). For the purpose of this project, a 
-service account with the predefined roles of *BigQuery Data Viewer (roles/bigquery.dataViewer)*, 
+a service account with the right roles for a given gcp project. 
+
+For more information visit [service-account](https://cloud.google.com/docs/authentication#service-accounts).
+
+For the purpose of this project, a service account with the predefined roles of *BigQuery Data Viewer (roles/bigquery.dataViewer)*, 
 *BigQuery Job User (roles/bigquery.jobUser)* and *Storage Object Viewer (roles/storage.objectViewer)* was used. 
+
 After creating the service account, you should create an identification key (json format) to keep in a safe place on 
-your local PC. **N.B: don't store the key in github repo**
+your local PC.  **N.B: don't store the key in github repo**
 
 Next step is to set the environment variable GOOGLE_APPLICATION_CREDENTIALS = \path\to\your\key\file.json . These 
 credentials allow to Google Cloud client libraries to authenticate them and to use GCP services. In this project, it 
