@@ -3,6 +3,9 @@ name = "python-gcp-api"
 version = "0.1.0"
 description = ""
 authors = ["GIORGIO PULCINI <giorgio.pulcini@alice.it>"]
+packages = [
+    { include = "python_gcp_api", from = "src" }
+]
 readme = "README.md"
 
 [tool.poetry.dependencies]
@@ -13,6 +16,7 @@ google-cloud-bigquery = "^3.20.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.1.1"
+python-dotenv = "^1.0.1"
 
 [build-system]
 requires = ["poetry-core"]

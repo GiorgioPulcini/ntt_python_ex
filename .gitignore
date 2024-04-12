@@ -14,3 +14,6 @@ tmp/
 # Exclude virtualenv python file
 venv/
 *.pyc
+
+# Exclude sensible env file
+*.env
