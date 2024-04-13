@@ -1,6 +1,6 @@
 import unittest
 from dotenv import load_dotenv
-from python_gcp_api.bigquery_api import BigqueryApi
+from python_gcp_api.lib.bigquery_api import BigqueryApi
 
 
 class BigqueryApiTest(unittest.TestCase):
