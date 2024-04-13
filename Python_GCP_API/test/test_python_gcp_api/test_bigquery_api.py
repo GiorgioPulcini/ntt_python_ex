@@ -11,8 +11,8 @@ class BigqueryApiTest(unittest.TestCase):
     def test_check_table_true(self):
         # Given
         given_project_id = "training-gcp-309207"
-        given_dataset = "excellenceacademycarlolombardi"
-        given_table = "studente_table"
+        given_dataset = "ex_pulcinig"
+        given_table = "eu_country_summary"
         # When
         bq_api = BigqueryApi(given_project_id, given_dataset, given_table)
         # Then
@@ -21,12 +21,47 @@ class BigqueryApiTest(unittest.TestCase):
     def test_check_table_false(self):
         # Given
         given_project_id = "training-gcp-309207"
-        given_dataset = "excellenceacademycarlolombardi"
-        given_table = "fake_tables"
+        given_dataset = "ex_pulcinig"
+        given_table = "not_a_table"
         # When
         bq_api = BigqueryApi(given_project_id, given_dataset, given_table)
         # Then
         self.assertFalse(bq_api.check_table())
+
+    def test_check_data_true(self):
+        # Given
+        given_project_id = "training-gcp-309207"
+        given_dataset = "ex_pulcinig"
+        given_table = "eu_country_summary"
+        # When
+        bq_api = BigqueryApi(given_project_id, given_dataset, given_table)
+        # Then
+        self.assertTrue(bq_api.check_data())
+
+    def test_check_data_false(self):
+        # Given
+        given_project_id = "training-gcp-309207"
+        given_dataset = "ex_pulcinig"
+        given_table = "empty_table"
+        # When
+        bq_api = BigqueryApi(given_project_id, given_dataset, given_table)
+        # Then
+        self.assertFalse(bq_api.check_data())
+
+    def test_execute_query(self):
+        # Given
+        given_project_id = "training-gcp-309207"
+        given_dataset = "ex_pulcinig"
+        given_table = "eu_country_summary"
+        given_query_test = f"SELECT country_name " \
+                           f"FROM {given_project_id}.{given_dataset}.{given_table} " \
+                           f"WHERE UPPER(TRIM(capital_city)) = 'LISBON' "
+        given_results = "Portugal"
+        # When
+        bq_api = BigqueryApi(given_project_id, given_dataset, given_table)
+        query_result = bq_api.execute_query(given_query_test)
+        # Then
+        self.assertEqual(given_results, list(query_result)[0][0])
 
 
 if __name__ == '__main__':
