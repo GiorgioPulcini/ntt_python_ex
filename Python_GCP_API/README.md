@@ -52,7 +52,7 @@ a service account with the right roles for a given gcp project.
 For more information visit [service-account](https://cloud.google.com/docs/authentication#service-accounts).
 
 For the purpose of this project, a service account with the predefined roles of *BigQuery Data Viewer (roles/bigquery.dataViewer)*, 
-*BigQuery Job User (roles/bigquery.jobUser)* and *Storage Object Viewer (roles/storage.objectViewer)* was used. 
+*BigQuery Job User (roles/bigquery.jobUser)* and *Storage Admin (roles/storage.objectViewer)* was used. 
 
 After creating the service account, you should create an identification key (json format) to keep in a safe place on 
 your local PC.  **N.B: don't store the key in github repo**
