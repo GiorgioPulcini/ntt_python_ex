@@ -6,6 +6,7 @@
 - [FlowChart](#flowchart)
 - [Repo architecture](#repo-architecture)
 - [Prerequisites](#prerequisites)
+- [Usage](#usage)
 
 ## Description
 Simple python poetry project to interact with Google Cloud services through Python Apis.
@@ -70,3 +71,30 @@ gcloud auth application-default login
 This opens a browser window where you can log in with your Google account. After granting the necessary permissions, 
 Google will generate an access token that will be used by Google Cloud client libraries to authenticate your requests.
 
+## Usage
+
+After the creation of service account with appropriate roles and the installation of project dependencies into the .lock
+file, you'll be ready to run the code.
+
+The input parameters are:
+* _project_id_, the project linked to service account
+* _input_dataset_ and _input_table_, the project_id.dataset.table to query
+* _input_bucket_, the bucket name where query is stored into
+* _input_query_, the files's name that contains the query
+
+The output parameters are:
+* _output_file_name_, name of output result file
+* _output_result_path_, path to result file (actually root\results\)
+
+To run the main, on the root directory of the project run:
+``` bash
+poetry run python .\src\python_gcp_api\main.py
+```
+The main.py code simply:
+1) set your GOOGLE_APPLICATIONS_CREDENTIALS (take from the local credential_path), 
+2) initialize the bq and gcs client, 
+3) verify existence of table, data and bucket with query file, 
+4) extract the query from the file,
+5) execute the query and save results on a csv.
+
+Enjoy! ;)
