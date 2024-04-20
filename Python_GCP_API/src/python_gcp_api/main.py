@@ -19,7 +19,7 @@ if os.path.exists(output_result_path):
 else:
     os.mkdir(output_result_path)
 
-credential_path = "C:\\Users\\EPULCIGWC\\Credenziali_Google_Cloud\\training-gcp-309207-ddb500a2fcb9.json"
+credential_path = "path\\to\\your\\google\\credentials.json"
 
 # set google credentials for service account
 set_google_credentials(credential_path)
