@@ -48,7 +48,7 @@ class BigqueryApiTest(unittest.TestCase):
         # Then
         self.assertFalse(bq_api.check_data(given_dataset, given_table))
 
-    def test_execute_query(self):
+    def test_execute_query_ok(self):
         # Given
         given_project_id = "training-gcp-309207"
         given_dataset = "ex_pulcinig"
@@ -62,6 +62,21 @@ class BigqueryApiTest(unittest.TestCase):
         query_result = bq_api.execute_query(given_query_test)
         # Then
         self.assertEqual(given_results, list(query_result)[0][0])
+
+    def test_execute_query_not_ok(self):
+        # Given
+        given_project_id = "training-gcp-309207"
+        given_dataset = "ex_pulcinig"
+        given_table = "eu_country_summary"
+        given_query_test = f"SELECT country_name " \
+                           f"FROM {given_project_id}.{given_dataset}.{given_table} " \
+                           f"WHERE UPPER(TRIM(capital_city)) = 'LISBON' "
+        given_results = "France"
+        # When
+        bq_api = BigqueryApi(given_project_id)
+        query_result = bq_api.execute_query(given_query_test)
+        # Then
+        self.assertNotEqual(given_results, list(query_result)[0][0])
 
 
 if __name__ == '__main__':

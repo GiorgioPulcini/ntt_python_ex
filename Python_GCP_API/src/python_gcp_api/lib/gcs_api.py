@@ -12,10 +12,12 @@ class GCSApi:
         try:
             self.gcs_client.get_bucket(bucket)
             return True
+        except NotFound:
+            return False
         except Forbidden:
             return False
 
-    def extract_query_from_bucket(self, bucket_name, file_name):
+    def extract_query_from_bucket(self, bucket_name, file_name) -> str | None:
         bucket = self.gcs_client.bucket(bucket_name)
         try:
             query = bucket.blob(file_name)
