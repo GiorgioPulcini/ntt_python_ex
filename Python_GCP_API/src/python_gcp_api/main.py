@@ -6,7 +6,7 @@ from google.api_core.exceptions import BadRequest
 
 
 # initialize logging
-logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 LOGGER = logging.getLogger(__name__)
 
 # input parameters
