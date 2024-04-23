@@ -6,4 +6,4 @@ def set_google_credentials(credential_path: str) -> None:
         os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
         os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
     else:
-        print("Sorry! File doesn't exist, pls check the path")
+        raise FileNotFoundError
