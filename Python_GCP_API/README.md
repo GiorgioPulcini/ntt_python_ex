@@ -96,5 +96,3 @@ The main.py code simply:
 3) verify existence of table, data and bucket with query file, 
 4) extract the query from the file,
 5) execute the query and save results on a csv.
-
-Enjoy! ;)
