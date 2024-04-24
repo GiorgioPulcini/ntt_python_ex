@@ -4,7 +4,6 @@ from python_gcp_api.lib.gcs_api import GCSApi
 from python_gcp_api.utils.set_google_credentials import set_google_credentials
 from google.api_core.exceptions import BadRequest
 
-
 # initialize logging
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 LOGGER = logging.getLogger(__name__)
@@ -15,6 +14,7 @@ input_dataset = "ex_pulcinig"
 input_table = "eu_country_summary"
 input_bucket = "ex_pulcinig"
 input_file = "query.txt"
+credential_path = "path\\to\\your\\google\\credentials.json"
 
 # output parameters
 cd = os.getcwd()
@@ -23,14 +23,12 @@ output_result_path = cd + "/results/"
 
 
 def main():
-
     if os.path.exists(output_result_path):
         pass
     else:
         os.mkdir(output_result_path)
 
     # set google credentials for service account
-    credential_path = "path\\to\\your\\google\\credentials.json"
     try:
         set_google_credentials(credential_path)
         LOGGER.info("Google Credentials set correctly!")
