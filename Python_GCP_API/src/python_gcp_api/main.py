@@ -21,7 +21,8 @@ cd = os.getcwd()
 output_file_name = "result"
 output_result_path = cd + "/results/"
 
-if __name__ == "__main__":
+
+def main():
 
     if os.path.exists(output_result_path):
         pass
@@ -69,3 +70,7 @@ if __name__ == "__main__":
             LOGGER.error("Table doesn't exist or it's empty, or you do not have access on it")
     except BadRequest:
         LOGGER.error("Sorry, project doesn't exist or access on it is denied")
+
+
+if __name__ == '__main__':
+    main()
