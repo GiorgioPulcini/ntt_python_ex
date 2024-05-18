@@ -1,6 +1,5 @@
 import unittest
 from unittest.mock import patch
-from google.cloud import storage
 from python_gcp_api.lib.gcs_api import GCSApi
 
 
