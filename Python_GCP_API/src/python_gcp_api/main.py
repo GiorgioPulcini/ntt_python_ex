@@ -5,7 +5,7 @@ from python_gcp_api.utils.set_google_credentials import set_google_credentials
 from google.api_core.exceptions import BadRequest
 
 # initialize logging
-logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
+logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 
 # input parameters
@@ -14,7 +14,7 @@ input_dataset = "ex_pulcinig"
 input_table = "eu_country_summary"
 input_bucket = "ex_pulcinig"
 input_file = "query.txt"
-credential_path = "path\\to\\your\\google\\credentials.json"
+credential_path = "C:\\path\\to\\your\\credentials.json"
 
 # output parameters
 cd = os.getcwd()
@@ -39,11 +39,11 @@ def main():
     # initialize Bigquery and GCS client
     LOGGER.info("Initializing Client...")
     try:
-        bq_client = BigqueryApi(project_id)
-        gcs_client = GCSApi(project_id)
-        # verify table existence
+        bq_client = BigqueryApi()
+        gcs_client = GCSApi()
+        # verify table and data existence
         LOGGER.info("Checking bq table...")
-        if bq_client.check_table(input_dataset, input_table) and bq_client.check_data(input_dataset, input_table):
+        if bq_client.check_table(project_id, input_dataset, input_table) and bq_client.check_data(project_id, input_dataset, input_table):
             # verify bucket existence
             LOGGER.info("Checking gcs bucket...")
             if gcs_client.check_bucket(input_bucket):

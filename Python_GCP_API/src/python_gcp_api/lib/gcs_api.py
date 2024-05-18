@@ -4,8 +4,7 @@ from google.api_core.exceptions import Forbidden, NotFound
 
 class GCSApi:
 
-    def __init__(self, project_id: str):
-        self.project_id = project_id
+    def __init__(self):
         self.gcs_client = storage.Client()
 
     def check_bucket(self, bucket: str) -> bool:

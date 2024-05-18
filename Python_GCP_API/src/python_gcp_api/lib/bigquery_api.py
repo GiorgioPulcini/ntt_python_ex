@@ -4,13 +4,12 @@ from google.api_core.exceptions import NotFound
 
 class BigqueryApi:
 
-    def __init__(self, project_id: str):
-        self.project_id = project_id
+    def __init__(self):
         self.bq_client = bigquery.Client()
 
-    def check_table(self, dataset: str, table: str) -> bool:
+    def check_table(self, project_id: str, dataset: str, table: str) -> bool:
         try:
-            self.bq_client.get_table(f"{self.project_id}.{dataset}.{table}")
+            self.bq_client.get_table(f"{project_id}.{dataset}.{table}")
             return True
         except NotFound:
             return False
@@ -20,7 +19,7 @@ class BigqueryApi:
         results = query_job.result()
         return results
 
-    def check_data(self, dataset: str, table: str) -> bool:
-        query_check = f"SELECT COUNT(*) FROM {self.project_id}.{dataset}.{table}"
+    def check_data(self, project_id: str, dataset: str, table: str) -> bool:
+        query_check = f"SELECT COUNT(*) FROM {project_id}.{dataset}.{table}"
         query_result = list(self.execute_query(query_check))
         return query_result[0][0] > 0
